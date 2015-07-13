@@ -11,6 +11,10 @@ from threading import *
 
 screenLock = Semaphore(value=1)
 
+#this has to be in to direct the URL path
+def home(request):
+    return render(request, "home.html", {})
+
 def connScan(tgtHost, tgtPort):
     try:
         connSkt = socket(AF_INET, SOCK_STREAM)
